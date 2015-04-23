@@ -22,7 +22,7 @@
 //#include <Adafruit_GFX.h>
 
 #define BLACK 0
-#define WHITE 1
+#define WHITE 255
 
 class IIC_without_ACK
 {
