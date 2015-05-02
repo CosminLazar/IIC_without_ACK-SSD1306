@@ -177,33 +177,6 @@ void IIC_without_ACK::Char_F8x16(unsigned char x, unsigned char y, const char ch
 	}
 }
 
-
-//显示16x16的中文 -- 使用此函数时，将此处以及IIC_without_ACK.h中相应的注释部分移除。
-/*
-void IIC_without_ACK::CN_F16x16(unsigned char x, unsigned char y, unsigned char N)
-{
-unsigned char wm=0;
-unsigned int adder=32*N;
-IIC_SetPos(x , y);
-Begin_IIC_Data();
-for(wm = 0;wm < 16;wm++)
-{
-Write_IIC_Byte(CN16x16[adder]);
-adder += 1;
-}
-IIC_Stop();
-IIC_SetPos(x,y + 1);
-Begin_IIC_Data();
-for(wm = 0;wm < 16;wm++)
-{
-Write_IIC_Byte(CN16x16[adder]);
-adder += 1;
-}
-IIC_Stop();
-}
-*/
-
-
 //显示128x64的BMP图片 -- 使用此函数时，将此处以及IIC_without_ACK.h中相应的注释部分移除。
 void IIC_without_ACK::Draw_BMP(unsigned char x0, unsigned char y0, unsigned char x1, unsigned char y1, const char BMP[])
 {
