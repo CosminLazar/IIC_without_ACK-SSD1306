@@ -1,6 +1,6 @@
 # IIC_without_ACK
 
-Library to use for controlling IIC SPI displays like the one shown in the picture.
+Library to use for controlling IIC SPI displays (SSD1306) like the one shown in the picture.
 
 ![IIC display](http://i.ebayimg.com/00/s/OTgzWDExMDI=/z/Sj8AAOSwMKpUZwMz/$_57.JPG)
 
