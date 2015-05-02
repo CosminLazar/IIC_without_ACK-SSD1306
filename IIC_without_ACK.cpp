@@ -147,37 +147,35 @@ void IIC_without_ACK::Char_F6x8(unsigned char x, unsigned char y, const char ch[
 }
 
 
-//显示8x16 ASCII字符 -- 使用此函数时，将此处以及IIC_without_ACK.h中相应的注释部分移除。
-/*
-void IIC_without_ACK::Char_F8x16(unsigned char x, unsigned char y,const char ch[])
+void IIC_without_ACK::Char_F8x16(unsigned char x, unsigned char y, const char ch[])
 {
-unsigned char c=0,i=0,j=0;
-while (ch[j]!='\0')
-{
-c =ch[j]-32;
-if(x>120)
-{
-x=0;
-y++;
+	unsigned char c = 0, i = 0, j = 0;
+	while (ch[j] != '\0')
+	{
+		c = ch[j] - 32;
+		if (x > 120)
+		{
+			x = 0;
+			y++;
+		}
+		IIC_SetPos(x, y);
+		Begin_IIC_Data();
+		for (i = 0; i < 8; i++)
+		{
+			Write_IIC_Byte(font8X16[c * 16 + i]);
+		}
+		IIC_Stop();
+		IIC_SetPos(x, y + 1);
+		Begin_IIC_Data();
+		for (i = 0; i < 8; i++)
+		{
+			Write_IIC_Byte(font8X16[c * 16 + i + 8]);
+		}
+		IIC_Stop();
+		x += 8;
+		j++;
+	}
 }
-IIC_SetPos(x,y);
-Begin_IIC_Data();
-for(i=0;i<8;i++)
-{
-Write_IIC_Byte(font8X16[c*16+i]);
-}
-IIC_Stop();
-IIC_SetPos(x,y+1);
-Begin_IIC_Data();
-for(i=0;i<8;i++)
-{
-Write_IIC_Byte(font8X16[c*16+i+8]);
-}
-IIC_Stop();
-x+=8;
-j++;
-}
-}*/
 
 
 //显示16x16的中文 -- 使用此函数时，将此处以及IIC_without_ACK.h中相应的注释部分移除。
